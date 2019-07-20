@@ -19,15 +19,12 @@ namespace Abp.Web.Mvc.Alerts
 
         public bool Dismissible { get; set; }
 
-        public string DisplayType { get; set; }
-
-        public AlertMessage(AlertType type, [NotNull] string text, string title = null, bool dismissible = true, string displayType = null)
+        public AlertMessage(AlertType type, [NotNull] string text, string title = null, bool dismissible = true)
         {
             Type = type;
             Text = Check.NotNullOrWhiteSpace(text, nameof(text));
             Title = title;
             Dismissible = dismissible;
-            DisplayType = displayType ?? AlertDisplayType.PageAlert;
         }
     }
 }
